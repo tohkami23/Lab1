@@ -1,0 +1,43 @@
+# 2023-5-11
+# TPID LastName FirstName Age Country Organization Ranking Points
+10,  Swiatek,         Iga,       21, POL, WTA,        1,  9625
+20,  Sabalenka,       Aryna,     25, BLR, WTA,        2,  7881
+30,  Pegula,          Jessica,   29, USA, WTA,        3,  5300
+40,  Garcia,          Caroline,  29, FRA, WTA,        4,  5025
+50,  Gauff,           Coco,      19, USA, WTA,        5,  4345
+60,  Rybakina,        Elena,     23, KAZ, WTA,        6,  4195
+70,  Jabeur,          Ons,       28, TUN, WTA,        7,  4116
+80,  Sakkari,         Maria,     27, GRE, WTA,        8,  3516
+90,  Kasatkina,       Daria,     26, RUS, WTA,        9,  3505
+100, Kvitova,         Petra,     33, CZE, WTA,        10, 3162
+110, Djokovic,        Novak,     35, SRB, ATP,        1,  6775
+120, Alcaraz,         Carlos,    20, ESP, ATP,        2,  6770
+130, Medvedev,        Daniil,    27, RUS, ATP,        3,  5330
+140, Ruud,            Casper,    24, NOR, ATP,        4,  5165
+150, Tsitsipas,       Stefanos,  24, GRE, ATP,        5,  5015
+160, Rublev,          Andrey,    25, RUS, ATP,        6,  4190
+170, Rune,            Holger,    20, DEN, ATP,        7,  3865
+180, Sinner,          Jannik,    21, ITA, ATP,        8,  3525
+190, Fritz,           Taylor,    25, USA, ATP,        9,  3380
+200, Auger-Aliassime, Felix,     22, CAN, ATP,        10, 3235
+210, Pliskova,        Karolina,  31, CZE, WTA,        14, 2245
+220, Pliskova,        Kristyna,  31, CZE, Off,        0,  0
+300, Bullock,         Sandra,    58, USA, -,          0,  0
+310, Barrymore,       Drew,      48, USA, -,          0,  0
+320, Hanks,           Tom,       66, USA, -,          0,  0
+330, Zeta-Jones,      Catherine, 53, GBR, -,          0,  0
+340, Connery,         Sean,      0,  GBR, -,          0,  0
+350, Marceau,         Sophie,    56, FRA, -,          0,  0
+360, Karenina,        Anna,      0,  RUS, Fiction,    0,  0
+370, Khan,            Chinggis,  0,  MNG, -,          0,  0
+380, Son,             Goku,      0,  JPN, DragonBall, 0,  0
+390, Tsukino,         Usagi,     0,  JPN, SalorMoon,  0,  0
+400, Xyz,             Abc,       0,  XXX, Foobar,     0,  0
+410, Unknown,         Aladdin,   0,  USA, Disney,     0,  0
+420, Unknown,         Jasmine,   0,  USA, Disney,     0,  0
+430, Unknown,         Jafar,     0,  USA, Disney,     0,  0
+440, Unknown,         Abc,       0,  USA, Unknown,    0,  0
+450, Unknown,         Def,       0,  USA, Unknown,    0,  0
+460, Unknown,         Ghi,       0,  USA, Unknown,    0,  0
+
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+	  font-family: calibri, sans-serif;
+      }
+      pre code {
+	  background-color: #eee;
+	  border: 1px solid #999;
+	  display: block;
+	  padding: 5px;
+      }
+    </style>
+  </head>
+  <title> README </title>
+  <body>
+
+    <h1>Lab1: Java Development Environment</h1>
+
+    <p>In this first lab, we will:</p>
+    <ul>
+      <li>install Eclipse Java IDE (Integrated Development Environment);</li>
+      <li>add WindowBuilder to create a window application in 3 steps; and</li>
+      <li>add SQLite JDBC drive to create a database application in 3 steps.</li>
+    </ul>
+
+    <p>Throughtthe Lab1 exercises, you will learn:</p>
+    <ul>
+      <li>how to program in Java with Eclipse Java IDE;</li>
+      <li>how to create a window application with WindowBuilder;</li>
+      <li>how to create a database application with SQLite; and</li>
+      <li>how to create a multithread application.</li>
+    </ul>
+
+    <h2>Eclipse Java IDE</h2>
+    
+    <ol>
+      <li>Go to <a href="https://www.eclipse.org/downloads/packages/installer">
+	  Eclipse Installer</a>.</li>
+      <li>Download an appropriate version (Windows/macOS/Linux) of
+	"Eclipse IDE 2023-12" (or the latest version).</li>
+      <li>Run the downloaded installer.</li>
+      <li>Choose "Eclipse IDE for Java Developers".</li>
+      <li>Choose the installation folder and finish the installation of Eclipse IDE.
+      </li>
+    </ol>
+
+    <h2>Hello World</h2>
+
+    <ol>
+      <li>Run Eclipse IDE, choose an appropriate workspace directory, and launch.</li>
+      <li>Kill the Welcome window by clicking X.</li>
+      <li>File &rarr; New &rarr; Java Project.</li>
+      <li>Set Project Name to "HelloWorld",
+	uncheck "Create module-info.java file", and click Finish.</li>
+      <li> File &rarr; New &rarr; Class;
+	set Name to "HelloWorld" and click on Finish.</li>
+      <li> Add the following main method in the HelloWorld class definition.</li>
+	<code>
+	  public static void main(String[] args) {<br>
+	  &nbsp;&nbsp;System.out.println("Hello, world!");<br>
+	  }
+	</code>
+      <li>Execute the program by clicking the white triangle in the green circleo
+	on the menu.</li>
+      <img src="README_images/exec_symbol.png">
+      <li>Click on OK in the "Save and Launch" window.</li>
+      <li>Check to see that "Hello, world!" is printed in Console.</li>
+    </ol>
+
+    <dl>
+      <dt>Note 1:</dt>
+      <dd><kbd>System.out.println()</kbd> prints a string in one line in Console.
+      </dd>
+      <dt>Note 2:</dt>
+      <dd>Each Java program has to have one main method defined by
+	<kbd>public static void main(String[] args) { ... }</kbd> in a class.
+	This is the main method to be executed first when the Java program
+	gets executed.</dd>
+      <dt>Note 3:</dt>
+      <dd>No specific requirements on the name of the class with the main method.</dd>
+    </dl>
+    
+    <h2>Window Application Step 1</h2>
+
+    <ol>
+      <li>Create a new Javap project "WinApp1".</li>
+      <li>Help &rarr; Eclipse Marketplace.</li>
+      <li>Find "WindowBuilder".</li>
+      <li>Install "WindowBuilder Current" and click on Confirm.</li>
+      <li>Check "I accet the terms ..." and click on Finish.</li>
+      <li>Wait for installing software;
+	the progress is shown in the bottom right corner.</li>
+      <li>Click on Restart Now and wait for the restart of Eclipse IDE.</li>
+
+      <br>
+      <li>Right-click on "WinApp1" &rarr; New &rarr; Other.</li>
+      <li>WindowBuilder &rarr; Swing Designer &rarr; Application Window.</li>
+      <li>Click on Next.</li>
+      <li>Set Name to "WinApp1" and click on Finish.</li>
+
+      <br>
+      <li>Click on Design below the code pane.</li>
+      <li>Adjust the panes to clearly see the blank window layout.</li>
+      <li>Minimize Package Explorer on the left side by clicking
+	on the white rectangle next to the Package Explorer.</li>
+      <img src="README_images/minimize_symbol.png">
+      <li>Get Package Explorer back by clicking on the following symbol.</li>
+      <img src="README_images/back_package_explorer_symbol.png">
+
+      <br>
+      <li>Right-click on the black window layout &rarr; Set layout &rarr;
+	Absolute layout.</li>
+      <li>Click on JLabel in Parette/Components, move the cursor to the blank
+	window layout, and enlarge the JLabel box.</li>
+      <li>Press ESC to remove the JLabel message box if necessary.</li>
+      <li>Change Variable name to "lblClock" in Properties.</li>
+      <li>Change the font size to your favorite size (like 14) in Properties.</li>
+      <li>Go back to Source by clicking on Source below the Design pane.</li>
+      <li><kbd>lblClock</kbd> is declared locally at the end of
+	<kbd>initialize()</kbd>.</li>
+      <li>Add the declaration <kbd>private JLabel lblClock;</kbd>
+	after <kbd>private JFrame frame;</kbd> at the top of the
+	<kbd>WinApp1</kbd> class definition.</li>
+      <code>
+	private JFrame frame;<br>
+	private JLabel lblClock;
+      </code>
+      <li>Remove <kbd>JLabel</kbd> from
+	<kbd>JLabel lblClock = new JLabel("New label");</kbd>
+	at the end of <kbd>initialize()</kbd>.</li>
+      <code>
+	lblClock = new JLabel("New Label");<br>
+	lblClock.setFont(new Font("Tahoma", Font.PLAIN, 14));
+      </code>
+      <li>After <kbd>initialize();</kbd> in the class constructor <kbd>WinApp1()</kbd>,
+	add the following method call to change the label name.</li>
+      <code>
+	initialize();<br>
+	lblClock.setText("CLOCK");
+      </code>
+      <li>Run the program by clicking on the white triangle in the green circle.</li>
+      <li>Check to see that "CLOCK" appears in the popped-up window.</li>
+      <img src="README_images/WinApp1.png">
+      <li>Close the window by clicking on X at the top-right corner of the window.</li>
+    </ol>
+    <dl>
+      <dt>Note 1:</dt>
+      <dd>When you reopen the source file created by Application Window,
+	you may not see the Design tab under the source window. 
+	In that case, right-click on the file and choose Open With &rarr;
+	WindowBuilder Editor.</dd>
+      <dt>Note 2:</dt>
+      <dd>If the source file created by "Application Window" is opened
+	with the regular Java editor, you don't see the Design tab.</dd>
+    </dl>
+
+    <h2>Window Application Step 2</h2>
+
+    <ol>
+      <li>Create a new Java project "WinApp2".</li>
+      <li>Copy WinApp1/src/WinApp1.java and paste it in WinApp2/src.</li>
+      <li>Right-click on WinApp2/src/WinApp1.java.</li>
+      <li>Refactor &rarr; Rename; change name to WinApp2, click on Finish, and
+	click on Finish again.</li>
+      <li>Double-click on WinApp2/src/WinApp2.java.</li>
+      <li>Run the program to see "CLOCK" in the popped-up window and close it.</li>
+
+      <br>
+      <li>Go to WinApp2.java.</li>
+      <li>Add the following tow import statements after the last import statement
+	at the beginning of the source file.</li>
+      <code>
+	 import java.util.Calendar;<br>
+	 import java.util.GregorianCalender;
+      </code>
+      <li>In the class constructor <kbd>WinApp2();</kbd>, comment out
+	<kbd>lblClock.setText("CLOCK");</kbd> by adding <kbd>//</kbd>.</li>
+      <li>Add <kbd>clock();</kbd> after that.</li>
+      <code>
+	initialize();<br>
+	// lblClock.setText("CLOCK");<br>
+	clock();
+      </code>
+      <li>After the constructor definition <kbd>WinApp2(){}</kbd>,
+	add the following method.</li>
+      <code>
+	public void clock() {<br>
+	&nbsp;&nbsp;Calendar cal = new GregorianCalendar();<br>
+	&nbsp;&nbsp;int year = cal.get(Calendar.YEAR);<br>
+	&nbsp;&nbsp;int month = cal.get(Calendar.MONTH) + 1;<br>
+	&nbsp;&nbsp;int day = cal.get(Calendar.DAY_OF_MONTH);<br>
+	&nbsp;&nbsp;int hour = cal.get(Calendar.HOUR_OF_DAY);<br>
+	&nbsp;&nbsp;int minute = cal.get(Calendar.MINUTE);<br>
+	&nbsp;&nbsp;int second = cal.get(Calendar.SECOND);<br>
+	&nbsp;&nbsp;lblClock.setText(year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second);<br>
+	}
+      </code>
+      <li>Run the program.</li>
+      <li>Check to see that the current time is correctly printed in the popped-up
+	window.</li>
+      <img src="README_images/WinApp2.png">
+      <li>Enlarge the clock (JLabel) box if necessary.</li>
+    </ol>
+
+
+    <h2>Window Application Step 3</h2>
+
+    <ol>
+      <li>Create a new project "WinApp3".</li>
+      <li>Copy WinApp2/src/WinApp2.java and paste it at WinApp3/src.</li>
+      <li>Rename the file to WinApp3 using Refactor &rarr; Rename.</li>
+
+      <br>
+      <li>Go to Design.</li>
+      <li>Add JButton from Parette/Components to the window.</li>
+      <li>Change Variable to "btnClock" and text to "Clock On".</li>
+      <li>Go back to Source.</li>
+      <li>Add the following statement at the beginning of the WinApp class definition.
+      </li>
+      <code>
+        private boolean clockOn;
+      </code>
+      <li>After <kbd>WinApp3()</kbd>, add the following <kbd>ClockThread</kbd>
+	class definition.</li>
+<pre><code>public class ClockThread extends Thread {
+    public void run() {
+        while (true) {
+            clock();
+            try {
+                sleep(1000); // 1000 ms
+                if (!clockOn) break;
+            }
+            catch (Exception e) {
+                System.out.println(&ldquo;<<< &rdquo; + e.getMessage());
+                break;
+            }				 
+	}
+    }
+}
+</code></pre>
+      <li>Go to Design.</li>
+      <li>Double-click on btnClock.</li>
+      <li>Add the following statements in the body of <kbd>actionPerformed(ActionEvent e)</kbd>.</li>
+<pre><code>if (clockOn) {
+    btnClock.setText(&\ldquo;Clock On&rdquo;);
+    clockOn = false;
+}
+else {
+    btnClock.setText(&ldquo;Clock Off&rdquo;);
+    clockOn = true;
+    ClockThread ct = new ClockThread();
+    ct.start();
+}
+  </code><pre>
+    <li>Run the program.</li>
+    <li>Check that the click on "Clock On" turns the clock on and the click on "Clock Off" turns the clock off.</li>
+    <img src="README_images/WinApp3.png">
+    </ol>
+    <dl>
+      <dt>Note 1:</dt>
+      <dd>The <kbd>ClockThread</kbd> class is a thread class that inherits from
+	<kbd>Thread</kbd>.</dd>
+      <dt>Note 2:</dt>
+      <dd>The <kbd>run()</kbd> method of the <kbd>ClockThread</kbd> class is executed
+	when <kbd>start()</kbd> of the class instance is called.</dd>
+    </dl>
+    
+
+    <h2>Database Application Step 1</h2>
+
+    <p>Download <kbd>sqlite-jdbc-3.44.1.0.jar</kbd> (or the latest) from
+      <a href="https://github.com/xerial/sqlite-jdbc">github sqlite-jdbc site</a>. </p>
+    <p>Download <kbd>slf4j-api-2.0.9.jar</kbd> from
+      <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.9">slf4j-api/2.0.9</a>
+      and <kbd>slf4j-simple-2.0.9.jar</kbd> from
+      <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.9">slf4j-simple/2.0.9</a>.</p>
+
+    <h2>Database Application Step 2</h2>
+
+    <h2>Database Application Step 3</h2>
+
+
+
+
+    
+
+    
+  </body>
+</html>
