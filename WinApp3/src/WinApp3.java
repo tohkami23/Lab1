@@ -79,7 +79,7 @@ public class WinApp3 {
 		
 		lblClock = new JLabel("New label");
 		lblClock.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblClock.setBounds(76, 65, 130, 40);
+		lblClock.setBounds(76, 65, 150, 40);
 		frame.getContentPane().add(lblClock);
 		
 		JButton btnClock = new JButton("Clock On");

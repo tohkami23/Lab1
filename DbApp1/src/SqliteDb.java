@@ -71,7 +71,25 @@ public class SqliteDb {
     	JOptionPane.showMessageDialog(null, "Created a new table in SQLite DB <" + dbUrl + ">");
     }
     
+    public static void dropTable() {
+       	String sql = "DROP TABLE IF EXISTS TennisPlayers;";
+    	Connection conn = connect();
+    	try {
+    		Statement st = conn.createStatement();
+    		PreparedStatement ps = conn.prepareStatement(sql);
+    		ps.executeUpdate();
+    		ps.close();
+    		conn.close();
+    	}
+    	catch (Exception e) {
+    		System.out.println("<<< " + e.getMessage());
+    		JOptionPane.showMessageDialog(null, "<<< DROP TABLE Operation on <" + dbUrl + "> Failed");
+    		return;
+    	}
+    }
+    
     public static void initialize(String csvfile) {
+    	dropTable();
     	createTable();
     	ArrayList<String[]> tpList = DbData.readFile(csvfile);
     	for (int i = 0; i < tpList.size(); i++) {
@@ -133,7 +151,7 @@ public class SqliteDb {
     		conn.close();
     	}
     	catch (Exception e) {
-    		System.out.println("<<< " + e.getMessage());
+    		System.out.println("<<<-- " + e.getMessage());
     		JOptionPane.showMessageDialog(null, "<<< Inserting Data in SQLite DB <" + dbUrl + "> Failed");
     		return;
     	}
