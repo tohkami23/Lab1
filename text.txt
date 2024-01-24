@@ -1,0 +1,28 @@
+import java.sql.*;
+import javax.swing.*;
+import java.util.ArrayList;
+
+public class SqliteDb {
+    private static final String URL = "jdbc:sqlite:";
+    private static String dbUrl = null;
+    // TennisPlayer Field Index
+    public static final int TPF_TPID         = 0;
+    public static final int TPF_LASTNAME     = 1;
+    public static final int TPF_FIRSTNAME    = 2;
+    public static final int TPF_AGE          = 3;
+    public static final int TPF_COUNTRY      = 4;
+    public static final int TPF_ORGANIZATION = 5;
+    public static final int TPF_RANKING      = 6;
+    public static final int TPF_POINTS       = 7;
+    public static final int TPF_COUNT        = 8;
+    public static String[] TPF_NAME = {
+        "Tpid",
+        "LastName",
+        "FirstName",
+        "Age",
+        "Country",
+        "Organization",
+        "Ranking",
+        "Points"
+    };
+}

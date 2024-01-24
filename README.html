@@ -5,11 +5,19 @@
       body {
 	  font-family: calibri, sans-serif;
       }
+      kbd {
+	  font-size: 12px;
+      }
       pre code {
+	  font-size: 12px;
 	  background-color: #eee;
 	  border: 1px solid #999;
 	  display: block;
 	  padding: 5px;
+      }
+      iframe {
+	  background: #eee;
+	  border: 1px solid;
       }
     </style>
   </head>
@@ -22,10 +30,10 @@
     <ul>
       <li>install Eclipse Java IDE (Integrated Development Environment);</li>
       <li>add WindowBuilder to create a window application in 3 steps; and</li>
-      <li>add SQLite JDBC drive to create a database application in 3 steps.</li>
+      <li>add SQLite JDBC (Java Database Connectivity) driver to create a database application in 3 steps.</li>
     </ul>
 
-    <p>Throughtthe Lab1 exercises, you will learn:</p>
+    <p>Throught the Lab1 exercises, you will learn:</p>
     <ul>
       <li>how to program in Java with Eclipse Java IDE;</li>
       <li>how to create a window application with WindowBuilder;</li>
@@ -39,53 +47,56 @@
       <li>Go to <a href="https://www.eclipse.org/downloads/packages/installer">
 	  Eclipse Installer</a>.</li>
       <li>Download an appropriate version (Windows/macOS/Linux) of
-	"Eclipse IDE 2023-12" (or the latest version).</li>
+	"Eclipse IDE 2023-12" or the latest version.</li>
       <li>Run the downloaded installer.</li>
       <li>Choose "Eclipse IDE for Java Developers".</li>
-      <li>Choose the installation folder and finish the installation of Eclipse IDE.
-      </li>
+      <li>Choose the installation folder and finish the installation of
+	Eclipse IDE.</li>
     </ol>
 
     <h2>Hello World</h2>
 
     <ol>
-      <li>Run Eclipse IDE, choose an appropriate workspace directory, and launch.</li>
-      <li>Kill the Welcome window by clicking X.</li>
+      <li>Run Eclipse IDE, choose an appropriate workspace directory,
+	and launch.</li>
+      <li>Kill the Welcome window by clicking on X.</li>
       <li>File &rarr; New &rarr; Java Project.</li>
       <li>Set Project Name to "HelloWorld",
-	uncheck "Create module-info.java file", and click Finish.</li>
+	uncheck "Create module-info.java file", and click on Finish.</li>
       <li> File &rarr; New &rarr; Class;
 	set Name to "HelloWorld" and click on Finish.</li>
-      <li> Add the following main method in the HelloWorld class definition.</li>
-	<code>
-	  public static void main(String[] args) {<br>
-	  &nbsp;&nbsp;System.out.println("Hello, world!");<br>
-	  }
-	</code>
-      <li>Execute the program by clicking the white triangle in the green circleo
-	on the menu.</li>
-      <img src="README_images/exec_symbol.png">
+      <li>Add the following main method in the HelloWorld class definition.</li>
+
+<pre><code>public static void main(String[] args) {
+    System.out.println("Hello, world!");
+}</code></pre>
+
+      <li>Execute the program by clicking on the white triangle in the green
+	circleo	in the menu.</li>
+      <p>
+	<img src="README_images/exec_symbol.png">
+      </p>
+      
       <li>Click on OK in the "Save and Launch" window.</li>
       <li>Check to see that "Hello, world!" is printed in Console.</li>
     </ol>
 
-    <dl>
-      <dt>Note 1:</dt>
-      <dd><kbd>System.out.println()</kbd> prints a string in one line in Console.
-      </dd>
-      <dt>Note 2:</dt>
-      <dd>Each Java program has to have one main method defined by
+    <ul>Notes:
+      <li><kbd>System.out.println()</kbd> prints a string in one line
+	in Console.</li>
+      <li>Each Java program has to have one static main method defined by
 	<kbd>public static void main(String[] args) { ... }</kbd> in a class.
-	This is the main method to be executed first when the Java program
-	gets executed.</dd>
-      <dt>Note 3:</dt>
-      <dd>No specific requirements on the name of the class with the main method.</dd>
-    </dl>
+	This is the main method executed first when the Java program
+	gets executed.</li>
+      <li>No specific requirements on the name of the class with
+	the main method.</li>
+    </ul>
     
     <h2>Window Application Step 1</h2>
 
     <ol>
-      <li>Create a new Javap project "WinApp1".</li>
+      <li>Create a new Java project "WinApp1"
+	by File &rarr; New &rarr; Java Project.</li>
       <li>Help &rarr; Eclipse Marketplace.</li>
       <li>Find "WindowBuilder".</li>
       <li>Install "WindowBuilder Current" and click on Confirm.</li>
@@ -105,9 +116,16 @@
       <li>Adjust the panes to clearly see the blank window layout.</li>
       <li>Minimize Package Explorer on the left side by clicking
 	on the white rectangle next to the Package Explorer.</li>
-      <img src="README_images/minimize_symbol.png">
-      <li>Get Package Explorer back by clicking on the following symbol.</li>
-      <img src="README_images/back_package_explorer_symbol.png">
+
+      <p>
+	<img src="README_images/minimize_symbol.png">
+      </p>
+      
+      <li>Get Package Explorer back by clicking on the symbol shown below.</li>
+
+      <p>
+	<img src="README_images/back_package_explorer_symbol.png">
+      </p>
 
       <br>
       <li>Right-click on the black window layout &rarr; Set layout &rarr;
@@ -116,45 +134,59 @@
 	window layout, and enlarge the JLabel box.</li>
       <li>Press ESC to remove the JLabel message box if necessary.</li>
       <li>Change Variable name to "lblClock" in Properties.</li>
-      <li>Change the font size to your favorite size (like 14) in Properties.</li>
+      <li>Change the font size to 14 or your favorite size in Properties.</li>
+
+      <br>
       <li>Go back to Source by clicking on Source below the Design pane.</li>
-      <li><kbd>lblClock</kbd> is declared locally at the end of
+      <li>Check that <kbd>lblClock</kbd> is declared locally at the end of
 	<kbd>initialize()</kbd>.</li>
       <li>Add the declaration <kbd>private JLabel lblClock;</kbd>
 	after <kbd>private JFrame frame;</kbd> at the top of the
 	<kbd>WinApp1</kbd> class definition.</li>
-      <code>
-	private JFrame frame;<br>
-	private JLabel lblClock;
-      </code>
+
+<pre><code>private JFrame frame;
+private JLabel lblClock;
+</code></pre>
+
       <li>Remove <kbd>JLabel</kbd> from
 	<kbd>JLabel lblClock = new JLabel("New label");</kbd>
 	at the end of <kbd>initialize()</kbd>.</li>
-      <code>
-	lblClock = new JLabel("New Label");<br>
-	lblClock.setFont(new Font("Tahoma", Font.PLAIN, 14));
-      </code>
-      <li>After <kbd>initialize();</kbd> in the class constructor <kbd>WinApp1()</kbd>,
+
+<pre><code>lblClock = new JLabel("New Label");
+lblClock.setFont(new Font("Tahoma", Font.PLAIN, 14));
+</code></pre>
+
+      <li>After <kbd>initialize();</kbd> in the class constructor
+	<kbd>WinApp1()</kbd>,
 	add the following method call to change the label name.</li>
-      <code>
-	initialize();<br>
-	lblClock.setText("CLOCK");
-      </code>
-      <li>Run the program by clicking on the white triangle in the green circle.</li>
+
+<pre><code>initialize();
+lblClock.setText("CLOCK");
+</code></pre>
+
+      <br>
+      <li>Run the program by clicking on the white triangle in the green
+	circle.</li>
       <li>Check to see that "CLOCK" appears in the popped-up window.</li>
-      <img src="README_images/WinApp1.png">
-      <li>Close the window by clicking on X at the top-right corner of the window.</li>
+
+      <p>
+	<img src="README_images/WinApp1.png">
+      </p>
+      
+      <li>Close the window by clicking on X at the top-right corner of the
+	window.</li>
     </ol>
-    <dl>
-      <dt>Note 1:</dt>
-      <dd>When you reopen the source file created by Application Window,
+
+    <ul>Notes:
+      <li>When you reopen the source file created by "Application Window",
 	you may not see the Design tab under the source window. 
 	In that case, right-click on the file and choose Open With &rarr;
-	WindowBuilder Editor.</dd>
-      <dt>Note 2:</dt>
-      <dd>If the source file created by "Application Window" is opened
-	with the regular Java editor, you don't see the Design tab.</dd>
-    </dl>
+	WindowBuilder Editor.</li>
+      <li>If the source file created by "Application Window" is opened
+	with the regular Java editor, you don't see the Design tab.</li>
+    </ul>
+
+    
 
     <h2>Window Application Step 2</h2>
 
@@ -165,42 +197,53 @@
       <li>Refactor &rarr; Rename; change name to WinApp2, click on Finish, and
 	click on Finish again.</li>
       <li>Double-click on WinApp2/src/WinApp2.java.</li>
-      <li>Run the program to see "CLOCK" in the popped-up window and close it.</li>
+      <li>Run the program to see "CLOCK" in the popped-up window and close it.
+      </li>
 
       <br>
       <li>Go to WinApp2.java.</li>
-      <li>Add the following tow import statements after the last import statement
-	at the beginning of the source file.</li>
-      <code>
-	 import java.util.Calendar;<br>
-	 import java.util.GregorianCalender;
-      </code>
-      <li>In the class constructor <kbd>WinApp2();</kbd>, comment out
-	<kbd>lblClock.setText("CLOCK");</kbd> by adding <kbd>//</kbd>.</li>
+      <li>Add the following two import statements after the last import
+	statement at the beginning of the source file.</li>
+
+<pre><code>import java.util.Calendar;
+import java.util.GregorianCalender;
+</code></pre>
+      
+      <li>In the class constructor <kbd>WinApp2()</kbd>,
+	comment out <kbd>lblClock.setText("CLOCK");</kbd> by adding
+	<kbd>//</kbd>.</li>
       <li>Add <kbd>clock();</kbd> after that.</li>
-      <code>
-	initialize();<br>
-	// lblClock.setText("CLOCK");<br>
-	clock();
-      </code>
+
+<pre><code>initialize();
+// lblClock.setText("CLOCK");
+clock();
+</code></pre>
+
       <li>After the constructor definition <kbd>WinApp2(){}</kbd>,
 	add the following method.</li>
-      <code>
-	public void clock() {<br>
-	&nbsp;&nbsp;Calendar cal = new GregorianCalendar();<br>
-	&nbsp;&nbsp;int year = cal.get(Calendar.YEAR);<br>
-	&nbsp;&nbsp;int month = cal.get(Calendar.MONTH) + 1;<br>
-	&nbsp;&nbsp;int day = cal.get(Calendar.DAY_OF_MONTH);<br>
-	&nbsp;&nbsp;int hour = cal.get(Calendar.HOUR_OF_DAY);<br>
-	&nbsp;&nbsp;int minute = cal.get(Calendar.MINUTE);<br>
-	&nbsp;&nbsp;int second = cal.get(Calendar.SECOND);<br>
-	&nbsp;&nbsp;lblClock.setText(year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second);<br>
-	}
-      </code>
+
+<pre><code>public void clock() {
+    Calendar cal = new GregorianCalendar();
+    int year = cal.get(Calendar.YEAR);
+    int month = cal.get(Calendar.MONTH) + 1;
+    int day = cal.get(Calendar.DAY_OF_MONTH);
+    int hour = cal.get(Calendar.HOUR_OF_DAY);
+    int minute = cal.get(Calendar.MINUTE);
+    int second = cal.get(Calendar.SECOND);
+    lblClock.setText(year + "-" + month + "-" + day + " " + hour + ":"
+        + minute + ":" + second);
+}
+</code></pre>
+
+      <br>
       <li>Run the program.</li>
-      <li>Check to see that the current time is correctly printed in the popped-up
-	window.</li>
-      <img src="README_images/WinApp2.png">
+      <li>Check to see that the current time is correctly printed
+	in the popped-up window.</li>
+
+      <p>
+	<img src="README_images/WinApp2.png">
+      </p>
+
       <li>Enlarge the clock (JLabel) box if necessary.</li>
     </ol>
 
@@ -217,13 +260,15 @@
       <li>Add JButton from Parette/Components to the window.</li>
       <li>Change Variable to "btnClock" and text to "Clock On".</li>
       <li>Go back to Source.</li>
-      <li>Add the following statement at the beginning of the WinApp class definition.
-      </li>
-      <code>
-        private boolean clockOn;
-      </code>
-      <li>After <kbd>WinApp3()</kbd>, add the following <kbd>ClockThread</kbd>
-	class definition.</li>
+      <li>Add the following statement at the beginning of the
+	<kbd>WinApp3<kbd> class definition. </li>
+      
+<pre><code>private boolean clockOn;
+</code></pre>
+
+      <li>After <kbd>WinApp3(){...}</kbd>,
+	add the following <kbd>ClockThread</kbd> class definition.</li>
+      
 <pre><code>public class ClockThread extends Thread {
     public void run() {
         while (true) {
@@ -240,9 +285,12 @@
     }
 }
 </code></pre>
+
       <li>Go to Design.</li>
-      <li>Double-click on btnClock.</li>
-      <li>Add the following statements in the body of <kbd>actionPerformed(ActionEvent e)</kbd>.</li>
+      <li>Double-click on "btnClock".</li>
+      <li>Add the following statements in the body of
+	<kbd>actionPerformed(ActionEvent e)</kbd>.</li>
+      
 <pre><code>if (clockOn) {
     btnClock.setText(&\ldquo;Clock On&rdquo;);
     clockOn = false;
@@ -253,39 +301,595 @@ else {
     ClockThread ct = new ClockThread();
     ct.start();
 }
-  </code><pre>
+</code></pre>
+
     <li>Run the program.</li>
-    <li>Check that the click on "Clock On" turns the clock on and the click on "Clock Off" turns the clock off.</li>
-    <img src="README_images/WinApp3.png">
+    <li>Check that the click on "Clock On" turns the clock on and the click
+      on "Clock Off" turns the clock off.</li>
+
+    <p>
+      <img src="README_images/WinApp3.png">
+    </p>
     </ol>
-    <dl>
-      <dt>Note 1:</dt>
-      <dd>The <kbd>ClockThread</kbd> class is a thread class that inherits from
-	<kbd>Thread</kbd>.</dd>
-      <dt>Note 2:</dt>
-      <dd>The <kbd>run()</kbd> method of the <kbd>ClockThread</kbd> class is executed
-	when <kbd>start()</kbd> of the class instance is called.</dd>
-    </dl>
+
+    <ul>Notes:
+      <li>The <kbd>ClockThread</kbd> class is a thread class that inherits from
+	<kbd>Thread</kbd>.</li>
+      <li>The <kbd>run()</kbd> method of the <kbd>ClockThread</kbd> class is
+	executed when <kbd>start()</kbd> of the class instance is called.</li>
+    </ul>
+
     
 
     <h2>Database Application Step 1</h2>
 
-    <p>Download <kbd>sqlite-jdbc-3.44.1.0.jar</kbd> (or the latest) from
-      <a href="https://github.com/xerial/sqlite-jdbc">github sqlite-jdbc site</a>. </p>
-    <p>Download <kbd>slf4j-api-2.0.9.jar</kbd> from
-      <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.9">slf4j-api/2.0.9</a>
-      and <kbd>slf4j-simple-2.0.9.jar</kbd> from
-      <a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.9">slf4j-simple/2.0.9</a>.</p>
+    <ol>
+      <li>Download "Lab1_Files.zip" from Canvas,
+	extract the folder from the file,
+	and place it in your workspace.</li>
+      <li>Create a new Java project "DbApp1".</li>
+      <li>File &rarr; New &rarr; Other. Then WindowBuilder &rarr;
+	Swing Designer &rarr; Application Window,
+	click on Next, set Name to "DbApp1".</li>
+      <li>Go to Design.</li>
+      <li>Click on the blank window, set Layout &rarr; Absolute layout.</li>
+      <li>Create a JLabel with:
+	<ul>
+	  <li>Variable = "lblDbName"</li>
+	  <li>text = "SQLite DB Name"</li>
+	  <li>font size = 14 or your favorite	size</li>
+	</ul>
+      </li>
+      <li>Create a JTextField with:
+	<ul>
+	  <li>Variable = "txtDbName"</li>
+	  <li>text = "sqlite1.db" (the database name)</li>
+	</ul>
+      </li>
+      <li>Create a JLabel with:
+	<ul>
+	  <li>Variable = "lblCsvFile"</li>
+	  <li>text = "CSV Data File"</li>
+	</ul>
+      </li>
+      <li>Create a JTextField with:
+	<ul>
+	  <li>Variable = "txtCsvFile"</li>
+	  <li>text = "../Lab1_Files/tennis_players.csv"
+	    (the prepared CSV file of tennis players)</li>
+	</ul>
+      </li>
+      <li>Create a JButton with:
+	<ul>
+	  <li>Variable = "btnInit"</li>
+	  <li>text = "Init"</li>
+	</ul>
+      </li>
+      <li>Create a JButton with:
+	<ul>
+	  <li>Variable = "btnLoad"</li>
+	  <li>text = "Load"</li>
+	</ul>
+      </li>
+      <li>Create a JComboBox with:
+	<ul>
+	  <li>Variable = "comboBoxList"</li>
+	</ul>
+      </li>
 
-    <h2>Database Application Step 2</h2>
+      <br>
+      <li>Download <kbd>sqlite-jdbc-3.44.1.0.jar</kbd> (or the latest) from
+	<a href="https://github.com/xerial/sqlite-jdbc">github sqlite-jdbc site</a>. </li>
+      <li>Download <kbd>slf4j-api-2.0.9.jar</kbd> from
+	<a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.9">slf4j-api/2.0.9</a>
+	and <kbd>slf4j-simple-2.0.9.jar</kbd> from
+	<a href="https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.9">slf4j-simple/2.0.9</a>.</li>
+      <li>Right-click on DbApp1 &rarr; JRE System Library.</li>
+      <li>Build Path &rarr; Configure Build Path...</li>
+      <li>Close JRE System Library [JavaSE-21] by clicking on the down arrow.</li>
+      <li>Click on Classpath.</li>
+      <li>Click on Add External JARs...</li>
+      <li>Choose the three JAR files (<kbd>sqlite-jdbc-3.44.1.0.jar</kbd>,
+	<kbd>slf4j-api-2.0.9.jar</kbd>, and
+	<kbd>slf4j-simple-2.0.9.jar</kbd>) and click on Apply and Close.</li>
 
-    <h2>Database Application Step 3</h2>
+      <br>
+      <li>File &rarr; New &rarr; Class with Name = "DbData".</li>
+      <li>Define the "DbData" class as follows.</li>
 
+      <p>
+	<iframe src="README_images/DbData_Class_Def.java" width=700 height=430></iframe>
+      </p>
 
+      <li>The <kbd>readFile<kbd> method defined in this class reads the initial database
+	    data from the CSV file and returns the data in <kbd>ArrayList<kbd>.</li>
 
+      <br>
+      <li>File &rarr; New &rarr; Class; set Name to "SqliteDb".</li>
+      <li>Define the "SqliteDb" class as follows.</li>
+
+      <p>
+	<iframe src="README_images/SqliteDb_Class_Def.java" width=1200 height=600></iframe>
+      </p>
+
+      <br>
+      <li>The <kbd>SqliteDb</kbd> class defines the following methods:</li>
+      <ul>
+	<li><kbd>setDb()</kbd> creates a DB name.</li>
+	<li><kbd>connect()</kbd> connects the database.</li>
+	<li><kbd>dropTable()</kbd> removes the data table in the database.</li>
+	<li><kbd>createTable()</kbd> creates the data table in the database.</li>
+	<li><kbd>initialize()</kbd> inserts the initial data into the database.</li>
+	<li><kbd>getList()</kbd> gets the list of entries in the database.</li>
+	<li><kbd>insert()</kbd> inserts a data into the database.</li>
+      </ul>
+
+      <br>
+      <li>Go to DbApp1.java.</li>
+      <li>Add the following import statement after the last import statement.</li>
+      
+<pre><code>import java.sql.*;
+</code></pre>
+      
+      <li>Add the following declaration at the beginning of the <kbd>DbApp1</kbd> class.</li>
+      
+<pre><code>private JComboBox<String> comboBoxList;
+</code></pre>
+
+      <li>Change the JCombobox declaration at the end of <kbd>initialize()</kbd>.</li>
+	
+<pre><code>comboBoxList = new JComboBox<String>();
+</code></pre>
+
+      <li>Add the following method before <kbd>initialize()</kbd>.</li>
+      
+<pre><code>public void updateComboBoxList() {
+    comboBoxList.removeAllItems();
+    String[] list = SqliteDb.getList();
+    for (String s : list) comboBoxList.addItem(s);
+}	    
+</code></pre>
+
+      <li>Go to Design.</li>
+      <li>Double-click on "btnInit".</li>
+      <li>Add the following statements in <kbd>activePerformed(ActionEvent e)</kbd>
+	for btnInit.
+	
+<pre><code>SqliteDb.setDb(txtDbName.getText());
+SqliteDb.initialize(txtCsvFile.getText());
+updateComboBoxList();
+</code></pre>
+
+      <li>Go to Design.</li>
+      <li>Double-click on "btnLoad".</li>
+      <li>Add the following statements in <kbd>actionPerformed(ActionEvent e)</kbd>
+	for btnLoad.
+	
+<pre><code>SqliteDb.setDb(txtDbName.getText());
+updateComboBoxList();
+</code></pre>
+
+      <li>Run the program. The following window will appear.</li>
+      <p>
+	<img src ="README_images/DbApp1a.png" width=400>
+      </p>
+      
+      <li>Click on "Init". The following messsages will appear.</li>
+      <p>
+	<img src ="README_images/DbApp1b.png">
+      </p>
+      <p>
+	<img src ="README_images/DbApp1c.png">
+      </p>
+      <p>
+	<img src ="README_images/DbApp1d.png">
+      </p>
+      <li> The final window looks like:</li>
+      <p>
+	<img src ="README_images/DbApp1e.png" width=400>
+      </p>
+      <li>Terminate the program.</li>
+      <li>Run the program and click on "Load". The following message will appear.</li>
+      <p>
+	<img src ="README_images/DbApp1d.png">
+      </p>
+      <li> The final window looks like:</li>
+      <p>
+	<img src ="README_images/DbApp1e.png" width=400>
+      </p>
+    </ol>
+
+    <ul>Notes:
+      <li>The first click on Init creates a new database with the data read from
+	"../Lab1_files/tennis_players.csv".</li>
+      <li>The second click on "Load" obtains the data list from the creaed database.</li>
+      <li>The "splite1.db" file is created in the workspace.</li>
+      <li>The click on the "JComboBox" shows the list of data stored in the database:
+	Tpid: LastName, FirstName.</li>
+      <li><kbd>sqlite-jdbc-*.jar</kbd>, <kbd>slf4j-api-*.jar</kbd>, and
+	<kbd>slf4j-simple-*.jar</kbd> are stored in Lab1_Files.</li>
+      <li><kbd>tennis_players.csv</kbd> is also stored in Lab1_Files.</li>
+    </ul>
 
     
 
+    <h2>Database Application Step 2</h2>
+
+    <ol>
+      <li>Create a new Java project "DbApp2".</li>
+      <li>Copy the following Java files to DbApp2/src:</li>
+      <ul>
+	<li>DbApp1/src/DbApp1.java</li>
+	<li>DbApp1/src/DbData.java</li>
+	<li>DbApp1/src/SqliteDb.java</li>
+      </ul>
+      <li>Rename DbApp2/src/DbApp1 to DbApp2.java by Refactor &rarr; Rename.</li>
+      <li>Right-click on DbApp2 &rarr; JRE System Library and add
+	<kbd>sqlite-jdbc-*.jar</kbd>,
+	<kbd>slf4j-api-*.jar</kbd>, and
+	<kbd>slf4j-simple-*.jar</kbd> to Classpath, as done in DbApp1.</li>
+	
+      <br>
+      <li>Add the following label-textbox pairs:</li>
+      <ul>
+	<li>lblTpid (Text: Tpid) + txtTpid (Text: blank)</li>
+	<li>lblLastName (Text: LastName) + txtLastName</li>
+	<li>lblFirstName (Text: FirstName) + txtxFirstName</li>
+	<li>lblAge (Text: Age) + txtAge</li>
+	<li>lblCountry (Text: Country) + txtCountry</li>
+	<li>lblOrganization (Text: Organization) + txtOrganization</li>
+	<li>lblRanking (Text: Ranking) + txtRanking</li>
+	<li>lblPoints (Text: Points) + txtPoints</li>
+      </ul>
+      <li>They should look like:</li>
+
+      <p>
+	<img src ="README_images/DbApp2a.png" width=400>
+      </p>
+
+      <li>Add the following two methods before <kbd>updateComboBoxList()</kbd>
+	in the <kbd>DbApp2</kbd> class.</li>
+
+<pre><code>public String[] getTextFieldValues() {
+    String[] str = new String[SqliteDb.TPF_COUNT];
+    str[SqliteDb.TPF_TPID] = txtTpid.getText();
+    str[SqliteDb.TPF_LASTNAME] = txtLastName.getText(); 
+    str[SqliteDb.TPF_FIRSTNAME] = txtFirstName.getText();
+    str[SqliteDb.TPF_AGE] = txtAge.getText();
+    str[SqliteDb.TPF_COUNTRY] = txtCountry.getText();
+    str[SqliteDb.TPF_ORGANIZATION] = txtOrganization.getText();
+    str[SqliteDb.TPF_RANKING] = txtRanking.getText();
+    str[SqliteDb.TPF_POINTS] = txtPoints.getText(); 
+    return str;
+}
+	
+public void setTextFieldValues(String[] flist) {
+    txtTpid.setText(flist[SqliteDb.TPF_TPID]);
+    txtLastName.setText(flist[SqliteDb.TPF_LASTNAME]);
+    txtFirstName.setText(flist[SqliteDb.TPF_FIRSTNAME]);
+    txtAge.setText(flist[SqliteDb.TPF_AGE]);
+    txtCountry.setText(flist[SqliteDb.TPF_COUNTRY]);
+    txtOrganization.setText(flist[SqliteDb.TPF_ORGANIZATION]);
+    txtRanking.setText(flist[SqliteDb.TPF_RANKING]);
+    txtPoints.setText(flist[SqliteDb.TPF_POINTS]);
+}
+</code></pre>
+    
+      <li>Go to Design.</li>
+      <li>Righ-click on ComboBoxList &rarr; Add event handler &rarr; action.</li>
+      <li>Go back to Souce.</li>
+      <li>Add the following code in <kbd>actionPerformed(ActionEvent e)</kbd>
+	for <kbd>comboBoxList</kbd>.</li>
+
+<pre><code>String selected = (String) comboBoxList.getSelectedItem();
+if (selected == null) return;
+String[] item = selected.split("[:]", 0);
+ArrayList<String[]> vlist = SqliteDb.find(SqliteDb.TPF_TPID, item[0]);
+      setTextFieldValues(vlist.get(0));
+</code></pre>
+
+      <li>Add the following method to the <kbd>SqliteDb</kbd> class.</li>
+
+<pre><code>public static ArrayList<String[]> find(int tpfx, String fval) {
+    Connection conn = connect();
+    if (conn == null) return null;
+    try {
+        String sql = "SELECT * FROM TennisPlayers WHERE " + TPF_NAME[tpfx] + " = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, fval);
+        ResultSet rs = ps.executeQuery();
+        ArrayList<String[]> flist = new ArrayList<String[]>();
+        while (rs.next()) {
+            String[] str = new String[TPF_COUNT];
+            for (int i = 0; i < TPF_COUNT; i++) str[i] = rs.getString(TPF_NAME[i]);
+            flist.add(str);
+        }
+        rs.close();
+        ps.close();
+        conn.close();
+        return flist;
+    }
+    catch (Exception e) {
+        System.out.println("<<< " + e.getMessage());
+	JOptionPane.showMessageDialog(null, "<<< SELECT Operation to SQLite DB <" + dbUrl + "> Failed");
+        return null;
+    }
+}
+</code></pre>							    
+
+      <li> Run the program.</li>
+      <li>Select one of entry in "ComboBoxList" and check that the data of the selected item
+	are shown in the text fields.</li>
+
+      <p>
+	<img src ="README_images/DbApp2b.png" width=400>
+      </p>
+    </ol>
+      
+
+    <h2>Database Application Step 3</h2>
+
+    <ol>
+      <li>Create a new Java project "DbApp3".</li>
+      <li>Copy the following Java files to DbApp3/src:</li>
+      <ul>
+	<li>DbApp2/src/DbApp2.java</li>
+	<li>DbApp2/src/DbData.java</li>
+	<li>DbApp2/src/SqliteDb.java</li>
+      </ul>
+      <li>Rename DbApp3/src/DbApp2 to DbApp3.java by Refactor &rarr; Rename.</li>
+      <li>Right-click on DbApp3 &rarr; JRE System Library and add
+	<kbd>sqlite-jdbc-*.jar</kbd>,
+	<kbd>slf4j-api-*.jar</kbd>, and
+	<kbd>slf4j-simple-*.jar</kbd> to Classpath, as done in DbApp1.</li>
+
+      <br>
+      <li>Add the "Clear" button (btnClear) in the DbApp3 class.</li>
+      <li>Add the following code in its <kbd>actionPerformed()</kbd>.</li>
+
+<pre><code>btnClear.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        String[] flist = {"", "", "", "", "", "", "", ""};
+        setTextFieldValues(flist);
+    }
+});
+</code></pre>    
+
+      <li>The click on "Clear" should clear all the text fields.</li>
+
+      <br>
+      <li>Add the "Find" button (btnFind) in the DbApp3 class.
+      <li>Add the following code in its <kbd>actionPerformed()</kbd>.</li>
+
+<pre><code>btnFind.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        String[] flist = getTextFieldValues();	
+        ArrayList<String[]> vlist = null;
+        for (int i = 0; i < SqliteDb.TPF_COUNT; i++) {
+            if (flist[i].length() == 0) continue;
+            vlist = SqliteDb.find(i,  flist[i]);
+            break;
+        }
+        if (vlist.size() == 0) {
+            JOptionPane.showMessageDialog(null, "No Data Found");
+            return;
+        }
+        Object[] options = {"Yes", "No"};
+        for (int i = 0; i < vlist.size(); i++) {
+            setTextFieldValues(vlist.get(i));
+            if (vlist.size() > 1) {
+                int x = JOptionPane.showOptionDialog(null,
+                    "Next Data?",
+                    "Choose Yes/No",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[0]);
+                if (x == 1) break;
+            }
+        }	
+    }
+});
+</code></pre>
+
+      <li>The click on "Find" takes the non-blank field item and finds the data
+	with the field item. </li>
+      <li>If it finds one, it shows the data in the text fields.
+	If it does not find the data, it shows the message.</li>
+
+      <p>
+	<img src="README_images/DbApp3b.png">
+      </p>
+
+      <li>If it finds multiple data, then it shows one at a time with the following message.
+      </li>
+      
+      <p>
+	<img src="README_images/DbApp3c.png">
+      </p>
+
+      <li>Add the "Insert" button (btnInsert) in the DbApp3 class.</li>
+      <li>Add the following code in its <kbd>actionPerformed()</kbd>.</li>
+
+<pre><code>btnInsert.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        String[] flist = getTextFieldValues();
+        SqliteDb.insert(flist);
+        updateComboBoxList();
+    }
+});
+</code></pre>
+
+      <li>The click on "Insert" inserts the new data with the items
+	in the text fields into the database and updates the ComboBoxList.</li>
+      <li>If the data with the Tpid item already exists in the database,
+	the insert operation fails.</li>
+
+      <p>
+	<img src="README_images/DbApp3d.png">
+      </p>
+
+      <li>Add the "Update" button (btnUpdate) in the DbApp3 class.</li>
+      <li>Add the following code in its <kbd>actionPerformed()</kbd>.
+
+<pre><code>btnUpdate.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        String[] flist = getTextFieldValues();
+        SqliteDb.update(flist);
+        updateComboBoxList();
+    }
+});
+</code></pre>
+
+      <li>Add the following method in the SqliteDb class.</li>
+
+<pre><code>public static void update(String[] flist) {
+    Connection conn = connect();
+    if (conn == null) return;
+    try {
+        String sql = "UPDATE TennisPlayers SET LastName = ?, FirstName = ?, Age = ?, Country = ?, Organization = ?, Ranking = ?, Points = ? WHERE Tpid = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, flist[TPF_LASTNAME]);
+        ps.setString(2, flist[TPF_FIRSTNAME]);
+        ps.setString(3, flist[TPF_AGE]);
+        ps.setString(4, flist[TPF_COUNTRY]);                
+        ps.setString(5, flist[TPF_ORGANIZATION]);
+        ps.setString(6, flist[TPF_RANKING]);
+        ps.setString(7, flist[TPF_POINTS]);
+        ps.setString(8, flist[TPF_TPID]);
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
+    }
+    catch (Exception e) {
+        System.out.println("<<< " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "<<< Updating Data in SQLite DB <" + dbUrl + "> Failed");
+        return;
+    }
+}
+ </code></pre>
+      
+      <li>The click on "Update" updates the data with the new items in one or more text
+	fields and also updates the ComboBoxList.</li>
+
+      <br>
+      <li>Add the "Delete" button (btnDelete) in the DbApp3 class.</li>
+      <li>Add the following code in its <kbd>actionPerformed()</kbd>.</li>
+
+<pre><code>btnDelete.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        SqliteDb.delete(txtTpid.getText());
+        updateComboBoxList();
+    }
+});
+</code></pre>
+
+      <li>Add the following method in the SqliteDb class.</li>
+
+<pre><code>public static void delete(String tpid) {
+    Connection conn = connect();
+    if (conn == null) return;
+    try {
+        String sql = "DELETE FROM TennisPlayers WHERE Tpid = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, tpid);
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
+    }
+    catch (Exception e) {
+        System.out.println("<<< " + e.getMessage());
+        JOptionPane.showMessageDialog(null, "<<< Deleting Data in SQLite DB <" + dbUrl + "> Failed");
+        return;
+    }
+}
+</code></pre>
+
+      <li>The click on `Delete` deletes the data with the specified Tpid.</li>
+
+      <br>
+      <li>The window with the "Find", "Insert", "Update", "Delete", and "Clear" buttons
+	looks like:</li>
+
+      <p>
+	<img src="README_images/DbApp3a.png" width=400>
+      </p>
+
+      <br>
+      <li>Add the new label "lblImage" in the DbApp3 class.</li>
+      <li>Add the following import statement.</li>
+
+<pre><code>import javax.swing.ImageIcon;</code></pre>n
+
+      <li>Add the following code at the beginning of the DbApp3 class.</li>
+
+<pre><code>private JLabel lblImage;
+private int imgNum = 0;
+</code></pre>
+    
+      <li>Change the <kbd>lblImage</kbd> statement if necessary.</li>
+
+<pre><code>lblImage = new JLabel("Image");</code></pre>
+
+      <li>Change the instantiation of JLabel for image at the end of <kbd>initialize()</kbd>.</li>
+
+<pre><code>lblImage = new JLabel("Image");
+lblImage.setBounds(419, 205, 100, 140);
+ImageIcon img = new ImageIcon("../tennis_player_3_100x137.jpg");
+lblImage.setIcon(img);
+frame.getContentPane().add(lblImage);
+imgNum = 0;
+</code></pre>		
+
+      <li>Add the following method in the DbApp3 class.</li>
+
+<pre><code>public class ImageThread extends Thread {
+    public void run() {
+        while (true) {
+            try {
+                ImageIcon img = null;
+                sleep(10000); // 10,000 ms
+                switch (imgNum) {
+                case 0: img = new ImageIcon("../tennis_player_2_100x139.jpg"); break;
+                case 1: img = new ImageIcon("../tennis_player_3_100x137.jpg"); break;
+                case 2: img = new ImageIcon("../tennis_player_1_100x138.jpg"); break;
+                }
+                lblImage.setIcon(img);
+                imgNum += 1;
+                if (imgNum > 2) imgNum = 0;
+            }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+</code></pre>
+
+      <li>Add the following code at the end of <kbd>initialize()</kbd>.
+
+<pre><code>ImageThread it = new ImageThread();
+it.start();
+</code></pre>
+
+      <li>Three tennis player images stored in Lab1_Files are used:</li>
+      <ul>
+	<li>tennis_player_1_100x138.jpg</li>
+	<li>tennis_player_2_100x139.jpg</li>
+	<li>tennis_player_3_100x137.jpg</li>
+      </ul>
+
+      <li>Run the program.</li>
+      <li>Check that three tennis player images change every 10 sec.</li>
+
+      <p>
+	<img src="README_images/DbApp3e.png" width=400>
+      </p>
+    
+    </ol>
+
+<p>=== END OF DOCUMENT==</p>
     
   </body>
 </html>
